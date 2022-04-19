@@ -1,20 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GudEats</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GudEats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css"
+  </head>
 
-  <link rel="stylesheet" href="./assets/css/styles.css"
+  <body>
+    <div class="relative w-full">
+      <nav class="fixed z-10 w-full bg-white md:absolute md:bg-transparent">
+        <div class="container m-auto px-2 md:px-12 lg:px-7">
+          <div
+            class="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0"
+          >
+            <div class="w-full px-6 flex justify-between lg:w-max md:px-0">
+              <a
+                href="https://tailus.io/blocks/hero-section"
+                aria-label="logo"
+                class="flex space-x-2 items-center"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/81312/chili.svg"
+                  class="w-12 mr-3 mb-1"
+                  alt="GudEats logo"
+                  width="100"
+                  height="150"
+                />
+              </a>
+              <span class="text-3xl font-bold text-yellow-900 mt-2">
+                Güd<span class="text-yellow-700">Eats</span></span
+              >
+              <button
+                aria-label="humburger"
+                id="hamburger"
+                class="relative w-10 h-10 -mr-2 lg:hidden"
+              >
+                <div
+                  aria-hidden="false"
+                  id="line"
+                  class="inset-0 w-6 h-0.5 m-auto rounded bg-yellow-900 transtion duration-300"
+                ></div>
+                <div
+                  aria-hidden="true"
+                  id="line2"
+                  class="inset-0 w-6 h-0.5 mt-2 m-auto rounded bg-yellow-900 transtion duration-300"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="hidden w-full lg:flex flex-wrap justify-end items-center space-y-6 p-6 rounded-xl bg-white md:space-y-0 md:p-0 md:flex-nowrap md:bg-transparent lg:w-7/12"
+            >
+              <div class="text-gray-600 lg:pr-4">
+                <ul
+                  class="space-y-6 tracking-wide font-medium text-sm md:flex md:space-y-0"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block md:px-4 transition hover:text-yellow-700"
+                    >
+                      <!-- <span>I've a restaurant</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#" class="block md:px-4 transition hover:text-yellow-700">
+<span>Wishlist</span>
 
-  <script src="./assets/js/main.js"></script>
-</head>
+                              -->
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block md:px-4 transition hover:text-yellow-700"
+                    >
+                      <span>Recent Recipes</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="w-full space-y-2 border-yellow-200 lg:space-y-0 md:w-max lg:border-l"
+              >
+                <button
+                  type="button"
+                  title="Start buying"
+                  class="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 focus:bg-yellow-100 sm:w-max"
+                >
+                  <!-- <span class="block text-yellow-800 font-semibold text-sm">
+                              Sign up
+                          </span> -->
+                </button>
+                <button
+                  type="button"
+                  title="Start buying"
+                  class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max"
+                >
+                  <span class="block text-yellow-900 font-semibold text-sm">
+                    Start Now
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="relative bg-yellow-50">
+        <div
+          class="container m-auto px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7"
+        >
+          <div class="flex items-center flex-wrap px-2 md:px-0">
+            <div class="relative lg:w-6/12 lg:py-24 xl:py-32">
+              <h1
+                class="font-bold text-4xl text-yellow-900 md:text-5xl lg:w-10/12"
+              >
+                Your favorite dishes, just input your ingredients!
+              </h1>
+              <form action="" class="w-full mt-12">
+                <div
+                  class="relative flex p-4 square-full bg-white border border-yellow-200 shadow-md md:p-1"
+                >
+                  <!--          <select class="hidden p-3 square-full bg-transparent md:block md:p-4" name="domain" id="domain">
+                           <!--<option value="design">FastFood</option>
+                              <option value="development">Restaurant</option>
+                              <option value="marketing">Marketing</option>  
+                          </select> -->
+                  <input
+                    placeholder="Input your ingredients"
+                    class="w-64 p-4 square-full"
+                    type="text"
+                  />
+                  <button
+                    type="button"
+                    title="Start buying"
+                    class="ml-auto py-1 px-1 square-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
+                  >
+                    <span
+                      class="hidden text-yellow-900 font-bold sm:block text-bas"
+                    >
+                      Add ingredient
+                    </span>
 
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 mx-auto text-yellow-900 md:hidden"
+                      fill="currentColor"
+                      class="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <p class="mt-8 text-gray-700 lg:w-10/12">
+                With our easy to use app, we'll find the recipes with your
+                ingredients. <a href="#" class="text-yellow-700"></a> Saving you
+                time, and getting you
+                <span class="text-red-900 font-bold">GüdEats.</span>
+              </p>
+            </div>
 
-<body>
-  
-</body>
+            <div class="ml-auto -mb-24 lg:-mb-56 lg:w-6/12">
+              <img
+                src="https://tailus.io/sources/blocks/food-delivery/preview/images/food.webp"
+                class="relative"
+                alt="food illustration"
+                loading="lazy"
+                width="4500"
+                height="4500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Results section-->
 
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Start a search in order to see recipes for your desired ingredients. </h1>
+            <div class="h-1 w-20 bg-yellow-500 rounded"></div>
+          </div>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500"></p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://www.thespruceeats.com/thmb/yLyKgqIj6-SLt9gJkgkjfIZtfC0=/4300x2867/filters:no_upscale():max_bytes(150000):strip_icc()/chole-chickpea-curry-1957946-hero-01-cddf957cc78d4032ba29ec2adbc05a97.jpg" alt="content">
+              <h3 class="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+              <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+            </div>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/11/25/0/FNK_pan-seared-salmon-with-kale-apple-salad_s4x3.jpg.rend.hgtvcom.616.462.suffix/1387918756116.jpeg" alt="content">
+              <h3 class="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
+              <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+            </div>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg" alt="content">
+              <h3 class="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
+              <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+            </div>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://static01.nyt.com/images/2022/04/23/dining/15Pasta-Promo/merlin_205476429_96adbf19-016d-488f-9e9e-f09c20ea7f1a-threeByTwoMediumAt2X.jpg" alt="content">
+              <h3 class="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
+              <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script async src="./assets/js/main.js"></script>
+  </body>
 </html>
