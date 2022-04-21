@@ -2,6 +2,8 @@ const foodKey = "93332e8ccaef48679b22fa190b412297";
 var userIngredients = "";
 
 
+
+
 async function fetchRecipes() {
   fetch(
     "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
@@ -21,6 +23,8 @@ async function fetchRecipes() {
       var recipe2Name = data[1].title
       var recipe3Name = data[2].title 
       var recipe4Name = data[3].title 
+
+      //var recipe1Description = data[0].
       
       var recipeImage1 = data[0].image
       var recipeImage2 = data[1].image
@@ -56,7 +60,7 @@ async function fetchRecipes() {
 			
 
 
-
+     
 
 
     });

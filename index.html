@@ -59,7 +59,7 @@
                 >
                   <li>
                     <a
-                      href="#"
+                      href="#results-header"
                       class="block md:px-4 transition hover:text-yellow-700"
                     >
                       <!-- <span>I've a restaurant</span>
@@ -147,6 +147,8 @@
                     </span>
                     --> 
                   <button
+                  
+                         
                     id="searchButton"
                     type="button"
                     title="Start buying"
@@ -155,7 +157,7 @@
                     <span
                       class="hidden text-yellow-900 font-bold sm:block text-bas"
                     >
-                      Search
+                    Search
                     </span>
 
                     <svg
@@ -170,6 +172,13 @@
                       />
                     </svg>
                   </button>
+
+                  <script type="text/javascript">
+                    document.getElementById("searchButton").onclick = function () {
+                        location.href = "#results-header";
+                    };
+                </script>
+
                 </div>
               </form>
               <p class="mt-8 text-gray-700 lg:w-10/12">
