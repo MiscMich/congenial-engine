@@ -1,4 +1,49 @@
-const foodKey = "d289f083ffc3436ebda43516c355f3cb";
+let weatherTemperature = document.getElementById(
+  "weather-temperature"
+).innerHTML;
+console.log(weatherTemperature);
+$.getJSON("https://ipinfo.io/json", function (data) {
+  console.log(data.ip);
+  var zipCode = data.postal;
+
+  console.log(zipCode);
+
+  console.log("yo");
+
+  document.getElementById("weather-temperature").innerHTML = zipCode;
+
+  getWeatherTemperature()
+});
+
+//function setZipCode() {
+ // var zipCode = document.getElementById("weather-temperature").innerHTML;
+ // console.log(zipCode);
+ // getWeatherTemperature();
+//}
+async function getWeatherTemperature() {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?units=imperial&zip=" +
+      document.getElementById("weather-temperature").innerHTML +
+      "&APPID=6b8ff502f80dcf5372abe6360c0d7966"
+  ).then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  console.log(data.main.temp);
+  var userTemperature = data.main.temp;
+  var userCity = data.name
+
+  console.log(userCity, userTemperature);
+
+  $("#weather-temperature").text(
+    "We've analyzed the weather in your location. In " + userCity + " it is currently " + userTemperature + "°F"
+  );
+})}
+
+//{"ip":"106.201.178.230"}
+
+const foodKey = "93332e8ccaef48679b22fa190b412297";
 var userIngredients = "";
 var userIngredientsArray = [];
 var viewRecipe1 = document.getElementById("#view-recipe-1");
@@ -12,9 +57,7 @@ pageLoad();
 
 async function pageLoad() {
   fetch(
-    "https://api.spoonacular.com/recipes/random?number=4" +
-      "&apiKey=" +
-      foodKey
+    "https://api.spoonacular.com/recipes/random?number=4" + "&apiKey=" + foodKey
   )
     .then(function (response) {
       return response.json();
@@ -34,14 +77,14 @@ async function pageLoad() {
 
       var recipe1Id = data.recipes[0].id;
       var recipe2Id = data.recipes[1].id;
-      var recipe3Id =data.recipes[2].id;
+      var recipe3Id = data.recipes[2].id;
       var recipe4Id = data.recipes[3].id;
       console.log(recipe1Id, recipe2Id, recipe3Id, recipe4Id);
 
       var recipe1Name = data.recipes[0].title;
       var recipe2Name = data.recipes[1].title;
       var recipe3Name = data.recipes[2].title;
-      var recipe4Name =data.recipes[3].title;
+      var recipe4Name = data.recipes[3].title;
 
       //var recipe1Description = data[0].
 
@@ -85,8 +128,6 @@ async function pageLoad() {
       console.log($("#view-recipe-1").attr("foodId"));
     });
 }
-
-
 
 async function fetchRecipes() {
   fetch(
