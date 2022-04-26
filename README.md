@@ -1,7 +1,7 @@
 # Description
 GüdEats is a fully responsive web application the user can search recipes using as little as one or many ingredients. The user will be produced with a maxiumum of four recipes wether its a meal or alcoholic beverage.
 
-https://miscmich.github.io/congenial-engine/
+## https://miscmich.github.io/congenial-engine/
 
 ## Preview
 ![app-screenshot](https://user-images.githubusercontent.com/100798134/165227183-dd617657-71f2-4737-a63e-1e527b5f01cc.JPG)
