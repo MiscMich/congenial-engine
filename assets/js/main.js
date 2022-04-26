@@ -12,36 +12,40 @@ $.getJSON("https://ipinfo.io/json", function (data) {
 
   document.getElementById("weather-temperature").innerHTML = zipCode;
 
-  getWeatherTemperature()
+  getWeatherTemperature();
 });
 
 //function setZipCode() {
- // var zipCode = document.getElementById("weather-temperature").innerHTML;
- // console.log(zipCode);
- // getWeatherTemperature();
+// var zipCode = document.getElementById("weather-temperature").innerHTML;
+// console.log(zipCode);
+// getWeatherTemperature();
 //}
 async function getWeatherTemperature() {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?units=imperial&zip=" +
       document.getElementById("weather-temperature").innerHTML +
       "&APPID=6b8ff502f80dcf5372abe6360c0d7966"
-  ).then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  console.log(data.main.temp);
-  var userTemperature = data.main.temp;
-  var userCity = data.name
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(data.main.temp);
+      var userTemperature = data.main.temp;
+      var userCity = data.name;
 
-  console.log(userCity, userTemperature);
+      console.log(userCity, userTemperature);
 
-  $("#weather-temperature").text(
-    "We've analyzed the weather in your location. In " + userCity + " it is currently " + userTemperature + "°F"
-  );
-})}
-
-//{"ip":"106.201.178.230"}
+      $("#weather-temperature").text(
+        "We've analyzed the weather in your location. In " +
+          userCity +
+          " it is currently " +
+          userTemperature +
+          "°F"
+      );
+    });
+}
 
 const foodKey = "447b89e875a847c59f33b3aa81928b85";
 var userIngredients = "";
@@ -50,7 +54,6 @@ var viewRecipe1 = document.getElementById("#view-recipe-1");
 var viewRecipe2 = document.getElementById("#view-recipe-2");
 var viewRecipe3 = document.getElementById("#view-recipe-3");
 var viewRecipe4 = document.getElementById("#view-recipe-4");
-//var recipe1Id, recipe2Id, recipe3Id, recipe4Id;
 var searchButton = document.getElementById("#searchButton");
 
 pageLoad();
@@ -162,8 +165,6 @@ async function fetchRecipes() {
       var recipe2Name = data[1].title;
       var recipe3Name = data[2].title;
       var recipe4Name = data[3].title;
-
-      //var recipe1Description = data[0].
 
       var recipeImage1 = data[0].image;
       var recipeImage2 = data[1].image;
@@ -312,21 +313,3 @@ document.getElementById("view-recipe-4").onclick = function (fetchRecipes) {
       window.location.href = recipeWebsite4;
     });
 };
-
-//document.getElementById("searchButton").addEventListener("click", fetchRecipes);
-
-//function fetchDrinks() {
-// fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-//.then(response => response.json())
-/// .then(data => console.log(data));
-
-//}
-
-//function fetchRecipes() {
-// fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + userIngredients +'&=4&//////apiKey=' +  foodKey)
-// .then(response => response.json())
-// .then(data => console.log(data));
-
-//}
-
-//fetchRecipes();
