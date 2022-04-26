@@ -239,7 +239,7 @@ document.getElementById("view-recipe-2").onclick = function (fetchRecipes) {
       console.log(recipeWebsite2);
 
       var url2 = data.sourceUrl;
-      window.location.href = recipeWebsite2;
+      window.open(recipeWebsite2, "_blank");;
     });
 };
 
@@ -262,7 +262,7 @@ document.getElementById("view-recipe-1").onclick = function (fetchRecipes) {
       console.log(recipeWebsite1);
 
       var url1 = data.sourceUrl;
-      window.location.href = recipeWebsite1;
+      window.open(recipeWebsite1, "_blank");
     });
 };
 
@@ -287,7 +287,7 @@ document.getElementById("view-recipe-3").onclick = function (fetchRecipes) {
       console.log(recipeWebsite3);
 
       var url1 = data.sourceUrl;
-      window.open(recipeWebsite3).focus;
+      window.open(recipeWebsite3, "_blank");
     });
 };
 
@@ -310,6 +310,6 @@ document.getElementById("view-recipe-4").onclick = function (fetchRecipes) {
       console.log(recipeWebsite4);
 
       var url4 = data.sourceUrl;
-      window.location.href = recipeWebsite4;
+      window.open( recipeWebsite4, "_blank");
     });
 };
