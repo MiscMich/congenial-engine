@@ -11,6 +11,12 @@ GüdEats is a fully responsive web application the user can search recipes using
 * CSS/Tailwind
 * Javascript/jQuery
 
+## Collaborators
+* MiscMich
+* Abstrack5
+* Garcia3325
+* Gnorzea
+
 ### Copyright (c) 2022 LANG
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
