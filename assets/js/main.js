@@ -43,7 +43,7 @@ async function getWeatherTemperature() {
 
 //{"ip":"106.201.178.230"}
 
-const foodKey = "93332e8ccaef48679b22fa190b412297";
+const foodKey = "447b89e875a847c59f33b3aa81928b85";
 var userIngredients = "";
 var userIngredientsArray = [];
 var viewRecipe1 = document.getElementById("#view-recipe-1");
