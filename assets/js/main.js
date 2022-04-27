@@ -1,14 +1,14 @@
 let weatherTemperature = document.getElementById(
   "weather-temperature"
 ).innerHTML;
-console.log(weatherTemperature);
+// console.log(weatherTemperature);
 $.getJSON("https://ipinfo.io/json", function (data) {
-  console.log(data.ip);
+  // console.log(data.ip);
   var zipCode = data.postal;
 
-  console.log(zipCode);
+  // console.log(zipCode);
 
-  console.log("yo");
+  // console.log("yo");
 
   document.getElementById("weather-temperature").innerHTML = zipCode;
 
@@ -30,8 +30,8 @@ async function getWeatherTemperature() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.main.temp);
+      // console.log(data);
+      // console.log(data.main.temp);
       var userTemperature = data.main.temp;
       var userCity = data.name;
 
@@ -49,12 +49,34 @@ async function getWeatherTemperature() {
 
 const foodKey = "447b89e875a847c59f33b3aa81928b85";
 var userIngredients = "";
-var userIngredientsArray = [];
+// var userIngredientsArray = [];
 var viewRecipe1 = document.getElementById("#view-recipe-1");
 var viewRecipe2 = document.getElementById("#view-recipe-2");
 var viewRecipe3 = document.getElementById("#view-recipe-3");
 var viewRecipe4 = document.getElementById("#view-recipe-4");
 var searchButton = document.getElementById("#searchButton");
+
+/*HAMBURGER*/
+const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger= document.querySelector(".hamburger");
+const closeIcon= document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
 
 pageLoad();
 
@@ -66,7 +88,7 @@ async function pageLoad() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var likes1 = data.recipes[0].aggregateLikes;
       var likes2 = data.recipes[1].aggregateLikes;
@@ -82,7 +104,7 @@ async function pageLoad() {
       var recipe2Id = data.recipes[1].id;
       var recipe3Id = data.recipes[2].id;
       var recipe4Id = data.recipes[3].id;
-      console.log(recipe1Id, recipe2Id, recipe3Id, recipe4Id);
+      // console.log(recipe1Id, recipe2Id, recipe3Id, recipe4Id);
 
       var recipe1Name = data.recipes[0].title;
       var recipe2Name = data.recipes[1].title;
@@ -96,7 +118,7 @@ async function pageLoad() {
       var recipeImage3 = data.recipes[2].image;
       var recipeImage4 = data.recipes[3].image;
 
-      console.log(recipe1Name);
+      // console.log(recipe1Name);
 
       $("#results-header").text("Featured Recipes");
 
@@ -126,9 +148,9 @@ async function pageLoad() {
       $("#recipeImage4").attr("alt", recipe4Name);
       $("#view-recipe-4").attr("foodId", recipe4Id);
 
-      console.log("hello");
+      // console.log("hello");
 
-      console.log($("#view-recipe-1").attr("foodId"));
+      // console.log($("#view-recipe-1").attr("foodId"));
     });
 }
 
@@ -143,7 +165,7 @@ async function fetchRecipes() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var likes1 = data[0].likes;
       var likes2 = data[1].likes;
@@ -159,7 +181,7 @@ async function fetchRecipes() {
       var recipe2Id = data[1].id;
       var recipe3Id = data[2].id;
       var recipe4Id = data[3].id;
-      console.log(recipe1Id, recipe2Id, recipe3Id, recipe4Id);
+      // console.log(recipe1Id, recipe2Id, recipe3Id, recipe4Id);
 
       var recipe1Name = data[0].title;
       var recipe2Name = data[1].title;
@@ -171,7 +193,7 @@ async function fetchRecipes() {
       var recipeImage3 = data[2].image;
       var recipeImage4 = data[3].image;
 
-      console.log(recipe1Name);
+      // console.log(recipe1Name);
 
       $("#results-header").text("Here are your results.");
 
@@ -201,17 +223,18 @@ async function fetchRecipes() {
       $("#recipeImage4").attr("alt", recipe4Name);
       $("#view-recipe-4").attr("foodId", recipe4Id);
 
-      console.log("hello");
+      // console.log("hello");
 
-      console.log($("#view-recipe-1").attr("foodId"));
+      // console.log($("#view-recipe-1").attr("foodId"));
     });
 }
 
 function addIngredient() {
   userIngredients = document.querySelector("#ingredientInput").value;
 
-  console.log(userIngredients);
+  // console.log(userIngredients);
   fetchRecipes();
+  saveRecentSearches();
 }
 
 document
@@ -232,11 +255,11 @@ document.getElementById("view-recipe-2").onclick = function (fetchRecipes) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var recipeWebsite2 = data.sourceUrl;
 
-      console.log(recipeWebsite2);
+      // console.log(recipeWebsite2);
 
       var url2 = data.sourceUrl;
       window.open(recipeWebsite2, "_blank");;
@@ -255,11 +278,11 @@ document.getElementById("view-recipe-1").onclick = function (fetchRecipes) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var recipeWebsite1 = data.sourceUrl;
 
-      console.log(recipeWebsite1);
+      // console.log(recipeWebsite1);
 
       var url1 = data.sourceUrl;
       window.open(recipeWebsite1, "_blank");
@@ -280,11 +303,11 @@ document.getElementById("view-recipe-3").onclick = function (fetchRecipes) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var recipeWebsite3 = data.sourceUrl;
 
-      console.log(recipeWebsite3);
+      // console.log(recipeWebsite3);
 
       var url1 = data.sourceUrl;
       window.open(recipeWebsite3, "_blank");
@@ -303,13 +326,46 @@ document.getElementById("view-recipe-4").onclick = function (fetchRecipes) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var recipeWebsite4 = data.sourceUrl;
 
-      console.log(recipeWebsite4);
+      // console.log(recipeWebsite4);
 
       var url4 = data.sourceUrl;
       window.open( recipeWebsite4, "_blank");
     });
+};
+
+
+function saveRecentSearches () {
+
+    var result = {
+      ingredient: userIngredients,
+  
+    }
+
+    const savedIngredients = localStorage.getItem('ingredient') || '[]'
+ 
+    const ingredients = [...JSON.parse(savedIngredients), result]
+    .sort((a, b) => b.ingredient- a.ingredient) 
+    .slice(0, 5) // 
+
+    localStorage.setItem('ingredient', JSON.stringify(ingredients)) 
+    
+    console.log(ingredients);
+
+    if (ingredients.length > 0) {
+      var lastItem = ingredients[ingredients.length - 1];
+      console.log(lastItem);
+      var ul = document.getElementById("menu")
+      var li = document.createElement("li")
+      var a = document.createElement("a")
+      a.setAttribute("class", "menuItem");
+        a.appendChild(document.createTextNode(lastItem.ingredient));
+        li.appendChild(a);
+        ul.appendChild(li)
+
+        return 
+    }; 
 };

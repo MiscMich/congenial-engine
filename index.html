@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GüdEats</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
@@ -40,12 +41,14 @@
             </a>
             <span class="text-3xl font-bold text-yellow-900 mt-2">
               Güd<span class="text-yellow-700">Eats</span></span>
-            <button aria-label="humburger" id="hamburger" class="relative w-10 h-10 -mr-2 lg:hidden">
-              <div aria-hidden="false" id="line"
-                class="inset-0 w-6 h-0.5 m-auto rounded bg-yellow-900 transtion duration-300"></div>
-              <div aria-hidden="true" id="line2"
-                class="inset-0 w-6 h-0.5 mt-2 m-auto rounded bg-yellow-900 transtion duration-300"></div>
-            </button>
+              <ul class="menu" id="menu">
+              
+              </ul>
+              <button class="hamburger">
+                <!-- material icons https://material.io/resources/icons/ -->
+                <i class="menuIcon material-icons">menu</i>
+                <i class="closeIcon material-icons">close</i>
+              </button>
           </div>
           <div
             class="hidden w-full lg:flex flex-wrap justify-end items-center space-y-6 p-6 rounded-xl bg-white md:space-y-0 md:p-0 md:flex-nowrap md:bg-transparent lg:w-7/12">
